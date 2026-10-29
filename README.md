@@ -1,99 +1,82 @@
-<!--
-  This README is the PUBLIC FACE of YOUR project.
-  Replace the example content with that of your application.
-  Do NOT put AI instructions here — that lives in AGENTS.md.
--->
-
-<!-- Replace X and Title -->
-# Assignment `Projeto Final`
-
-**Course:**  Mobile Application Development (DAM)
-
-**Student Number:** `49845`
-
-**Student Name:** `Gonçalo Barbosa`
-
-**Student Email:** `a49845@alunos.isel.pt`
-
-**Student class:** `62D`
-
-**Student GitHub:** `https://github.com/Gon1507`
-
-**Date:** `15/06/2026`
+ # ZeroWaste App
 
 
-# Zero Waste
+Smart pantry management assistant developed as the final project for the Mobile Application Development course at **ISEL**.
 
-ZeroWaste is a smart pantry management assistant that helps individuals save money and reduce food waste through intuitive inventory tracking and proactive and gamified insights.
+Designed to help individuals save money and reduce food waste through intuitive inventory tracking, proactive insights and gamified features.
 
-![status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-![android](https://img.shields.io/badge/Android-Kotlin%20%7C%20Compose-3DDC84)
 
-## Demo
+## Overview
 
-| Screen 1 | Screen 2 | Screen 3 |
-|---|---|---|
-| <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/5a84fb7a-3f2b-4869-a261-b69bcc425c95" /> | <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/d1f9e13c-8e01-464c-a844-ca42eeb7d0ce" /> | <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/e72a1bd7-d2c6-4c4b-9355-660ec0205f3b" /> |
-| Screen 4 | Screen 5 | Screen 6 |
-| <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/ab35ea0f-52af-4d53-88b2-d7cee8bb3eb0" /> | <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/93dba1ee-45fe-4ad3-a280-2168ac2df950" /> | <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/54dc7caa-a761-434a-b1a2-b960be6ed9f9" /> |
-|---|---|---|
-| <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/5d4537cd-1143-4dd8-ad9f-80ad67329bbe" /> | <img width="920" height="2048" alt="image" src="https://github.com/user-attachments/assets/beb2cf0b-f37b-4de0-8149-428d9c79865b" /> | - |
+
+Managing food expiration dates and planning meals efficiently can be challenging. ZeroWaste is an Android application that combines a clean mobile interface with intelligent features to keep track of pantry inventory, suggest recipes based on available ingredients and encourage sustainable consumption habits.
+
+The application benefits from modern Android architecture standards, offline capabilities and simulated freemium mechanics to provide a complete mobile experience.
+
 
 ## Features
 
-- [x] Screen 1 — Login Screen
-- [x] Screen 2 — Registration Screen
-- [x] Screen 3 — Main Screen
-- [x] Screen 4 — Add Product
-- [x] Screen 5 — Inventory
-- [x] Screen 6 — AI Recipes
-- [x] Screen 7 — Statistics
-- [x] Screen 8 — User's Profile
-- [x] State sharing between users
-- [x] AI integration - Generate Daily Tips and Recipes
-- [x] Multimedia (image / audio / video)
-- [x] Freemium model (free usage + simulated paid subscription)
-- [x] Offline mode
 
-## Stack
+- User authentication and account registration
+- Intuitive main dashboard for quick feature access
+- Product creation and pantry inventory management
+- AI-powered recipe generation based on available ingredients
+- AI-generated daily tips and insights to encourage waste reduction
+- Statistics and visual insights into pantry usage and household impact
+- User profile and account management
+- Shared application state between users
+- Multimedia support
+- Offline mode
+- Freemium model with free usage and simulated paid subscription
 
-Kotlin · Jetpack Compose · Material 3 · Navigation Compose · ViewModel · MVVM ·
-StateFlow · Repository Pattern · Hilt/Koin · Retrofit/Ktor · Coil · Room · DataStore.
-
-## How to run
-
-```bash
-git clone <repo>
-cd <repo>
-# Configure secrets (see docs/10_security_and_permissions.md)
-cp local.properties.example local.properties   # and fill in the keys
-./gradlew assembleDebug
-```
-
-Open in Android Studio (recommended version in `docs/06_architecture.md`) and run on an
-emulator/device with the indicated minimum API.
 
 ## Architecture
 
-Short summary + diagram. Full detail in [`docs/06_architecture.md`](docs/06_architecture.md).
 
-## Documentation
+The application follows the MVVM architectural pattern combined with the Repository pattern. It uses Jetpack Compose for the UI, Room for local database management, DataStore for user preferences and Retrofit for network requests.
 
-All the engineering design is in [`docs/`](docs/). Decisions in [`docs/adr/`](docs/adr/).
 
-## Team
+## Tech stack
 
-| Name | No. | Role |
-|---|---|---|
-| Gonçalo Barbosa | A49845 | Full Developer |
 
-## AI Usage
+Kotlin, Jetpack Compose, Material 3, Navigation Compose, ViewModel, StateFlow, Room, DataStore, Retrofit.
 
-This project was developed with the assistance of AI tools according to the rules in
-[`AGENTS.md`](AGENTS.md). Usage log in
-[`docs/14_ai_usage_log.md`](docs/14_ai_usage_log.md) and reflection in
-[`docs/15_postmortem.md`](docs/15_postmortem.md).
 
-## License
+## Getting started
 
-See [`LICENSE`](LICENSE).
+
+**Prerequisite:** [Android Studio](https://developer.android.com/studio) and an Android device or emulator.
+
+
+```bash
+git clone https://github.com/Gon1507/final-project-Gon1507.git
+cd final-project-Gon1507
+cp local.properties.example local.properties
+```
+Open the project folder in Android Studio, sync the Gradle files, and run the application on your device.
+
+
+## Usage Steps
+
+
+1. Log in or create a new user account.
+2. Add pantry products and track expiration dates via the inventory dashboard.
+3. Explore AI-generated recipes using the ingredients currently left in your pantry.
+4. Check daily tips and monitor your personal consumption statistics and impact.
+5. Manage account settings, offline modes and simulated subscription tiers.
+
+
+## Repository structure
+
+
+```
+app/                       Android application source code and resources
+local.properties.example   Template for local SDK and API keys configuration
+```
+
+
+## Notes
+
+
+- Configuration secrets and local properties must be defined locally using local.properties.
+- All sample screens and data are designed for academic and portfolio demonstration purposes.
