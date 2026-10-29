@@ -32,8 +32,11 @@ The application benefits from modern Android architecture standards, offline cap
 
 ## Architecture
 
+![Architecture](docs/arquitetura.png)
 
-The application follows the MVVM architectural pattern combined with the Repository pattern. It uses Jetpack Compose for the UI, Room for local database management, DataStore for user preferences and Retrofit for network requests.
+The application follows the MVVM architectural pattern combined with the Repository pattern. It uses Jetpack Compose for the UI, Room for local database management, DataStore for user preferences and Retrofit for network requests. **`ui/`**, one package per feature, which are `auth`, `inventory`, `ai_agent`, `statistics`, `profile`, each with its Compose screens and a `ViewModel` exposing `StateFlow`. Navigation is centralised in `ui/navigation/Rotas.kt`, and the Material 3 theme lives in `ui/theme` **`domain/`**, use cases, repository contracts and the domain model. `SampleRepository` exposes only two operations, `observeItems(): Flow<List<SampleItem>>` and `refresh(): Result<Unit>` and knows nothing about Android. **`data/`**, the other side of those contracts: `AuthRepository`, Firebase Auth for sessions, Firestore for profiles and family sharing, the Room database behind the pantry inventory, DataStore for preferences and a Retrofit client for OpenFoodFacts. **`core/`**,  `ConnectivityObserver`, which the ViewModels use to fall back to offline mode.
+
+The UI observes a `Flow` from the database and `refresh()` writes network results back into it, so a failed request never wipes what is already on screen.
 
 
 ## Tech stack
@@ -92,6 +95,8 @@ app/
     │       ├── navigation/   Rotas.kt, navigation graph and routes
     │       └── theme/        Color, Theme, Type, Material 3
     └── res/                  Launcher icons, drawables and string/theme values
+docs/
+├── arquitetura.png           Design, class diagram
 build.gradle.kts              Root build, plugins and versions
 settings.gradle.kts           Module registration and repositories
 gradle.properties             Build flags
