@@ -70,8 +70,33 @@ Open the project folder in Android Studio, sync the Gradle files, and run the ap
 
 
 ```
-app/                       Android application source code and resources
-local.properties.example   Template for local SDK and API keys configuration
+app/
+├── build.gradle.kts          Compose, Room, Retrofit, DataStore
+└── src/main/
+    ├── AndroidManifest.xml   Permissions and activity declaration
+    ├── java/com/example/zerowaste/
+    │   ├── DamApp.kt         Application class, manual dependency injection
+    │   ├── MainActivity.kt   Single activity that hosts the Compose navigation
+    │   ├── core/             Network state for offline mode
+    │   ├── data/
+    │   │   ├── local/        Room database, DAO, entity and DataStore preferences
+    │   │   ├── remote/       OpenFoodFactsApi, Retrofit client
+    │   │   └── repository/   AuthRepository
+    │   ├── domain/
+    │   │   ├── model/        SampleItem
+    │   │   ├── repository/   SampleRepository interface
+    │   │   └── usecase/      GetSampleItemsUseCase, ObservePremiumUseCase
+    │   ├── model/            Modelos.kt, shared data models
+    │   └── ui/
+    │       ├── feature/      ai_agent · auth · inventory · profile · statistics
+    │       ├── navigation/   Rotas.kt, navigation graph and routes
+    │       └── theme/        Color, Theme, Type, Material 3
+    └── res/                  Launcher icons, drawables and string/theme values
+build.gradle.kts              Root build, plugins and versions
+settings.gradle.kts           Module registration and repositories
+gradle.properties             Build flags
+gradlew / gradlew.bat         Gradle wrapper
+local.properties.example      Template for SDK path and API keys
 ```
 
 
